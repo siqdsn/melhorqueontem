@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://melhorqueontem.vercel.app/ -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sou Melhor Que Ontem — Débora Pereira | Terapias Integrativas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./index.html_files/css2" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6EFE2;
+    --cream-2:#EBDFC7;
+    --plum:#3A1B36;
+    --plum-soft:#6E4368;
+    --gold:#B8895A;
+    --gold-deep:#7A4F2B;
+    --gold-light:#D9BD8C;
+    --charcoal:#2B2320;
+    --charcoal-soft:#5A4E45;
+    --white:#FFFFFF;
+    --line:rgba(43,35,32,.14);
+    --shadow:0 24px 56px -28px rgba(43,35,32,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--charcoal);font-family:'Montserrat',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;font-size:15.5px;}
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 40px;}
+  h1,h2{font-family:'Playfair Display',serif;font-weight:500;line-height:1.2;color:var(--plum);}
+  h3{font-family:'Montserrat',sans-serif;font-weight:600;color:var(--charcoal);}
+  em{font-style:italic;color:var(--gold-deep);font-weight:500;}
+  p strong,span strong{color:var(--plum);font-weight:600;}
+  .icon{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;}
+
+  .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.2em;font-weight:600;color:var(--gold-deep);display:block;margin-bottom:16px;}
+  .sec-head{max-width:640px;margin:0 auto 44px;text-align:center;}
+  .sec-head h2{font-size:clamp(26px,3.4vw,40px);margin-bottom:14px;}
+  .sec-head p.sub{color:var(--charcoal-soft);font-size:15px;font-weight:300;}
+
+  .btn{
+    position:relative;display:inline-flex;align-items:center;gap:9px;padding:16px 32px;border-radius:100px;
+    font-family:'Montserrat',sans-serif;font-weight:600;font-size:14.5px;letter-spacing:.01em;cursor:pointer;border:none;color:var(--white);
+    background:linear-gradient(270deg,var(--plum),var(--plum-soft),var(--gold),var(--plum-soft),var(--plum));
+    background-size:300% 300%;
+    animation:shimmer 9s ease infinite;
+    box-shadow:0 14px 28px -16px rgba(58,27,54,.55);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px -16px rgba(58,27,54,.65);animation-duration:2.8s;}
+  .btn:active{transform:translateY(0) scale(.97);}
+  .btn-on-dark{background:var(--gold);color:var(--white);animation:none;box-shadow:none;}
+  .btn-on-dark:hover{background:var(--gold-light);}
+  @keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+  /* ===== header ===== */
+  header{position:sticky;top:0;z-index:60;background:rgba(246,239,226,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{position:relative;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;min-height:34px;}
+  .nav-links{display:flex;gap:28px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--charcoal-soft);flex:0 0 auto;}
+  .nav-links a{position:relative;opacity:.85;transition:opacity .2s;padding-bottom:3px;white-space:nowrap;}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold-deep);transition:width .3s ease;}
+  .nav-links a:hover{opacity:1;}
+  .nav-links a:hover::after{width:100%;}
+  .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;line-height:1.05;white-space:nowrap;}
+  .logo .name{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;font-weight:600;color:var(--plum);}
+  .logo .sub{display:block;font-family:'Montserrat',sans-serif;font-style:normal;font-size:9px;letter-spacing:.22em;color:var(--gold-deep);margin-top:4px;text-transform:uppercase;}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;margin-left:auto;}
+  .burger span{width:22px;height:1.3px;background:var(--plum);display:block;transition:transform .3s ease, opacity .3s ease;}
+  .burger.open span:nth-child(1){transform:translateY(6.3px) rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;}
+  .burger.open span:nth-child(3){transform:translateY(-6.3px) rotate(-45deg);}
+  .mobile-panel{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--cream);z-index:70;flex-direction:column;align-items:center;justify-content:center;gap:26px;transform:translateY(-100%);transition:transform .4s ease;}
+  .mobile-panel.open{transform:translateY(0);}
+  .mobile-panel a{font-family:'Playfair Display',serif;font-style:italic;font-size:23px;color:var(--plum);}
+  @media(max-width:860px){
+    .nav-links{display:none;}
+    .nav{padding:14px 24px;justify-content:flex-end;}
+    .burger{display:flex;}
+    .mobile-panel{display:flex;}
+    .logo .name{font-size:16px;}
+    .logo .sub{font-size:8px;}
+  }
+
+  /* ===== hero ===== */
+  .hero-grid{display:grid;grid-template-columns:1fr .85fr;align-items:center;gap:56px;min-height:520px;padding:52px 40px;max-width:1120px;margin:0 auto;}
+  .hero h1{font-size:clamp(28px,3.6vw,44px);margin:16px 0 20px;}
+  .hero p.lead{color:var(--charcoal-soft);font-size:15.5px;max-width:460px;margin-bottom:30px;font-weight:300;}
+  .hero-photo{position:relative;}
+  .hero-photo .frame{border-radius:14px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);aspect-ratio:4/5;}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 12%;}
+  .hero-badge{position:absolute;bottom:-18px;left:-18px;background:var(--plum);color:var(--cream);border-radius:12px;padding:14px 18px;box-shadow:var(--shadow);max-width:190px;}
+  .hero-badge .n{font-family:'Playfair Display',serif;font-size:22px;color:var(--gold-light);display:block;}
+  .hero-badge .l{font-size:10.5px;letter-spacing:.04em;color:rgba(246,239,226,.8);display:block;margin-top:2px;}
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;padding:32px 24px;gap:36px;}
+    .hero-photo{order:-1;max-width:280px;margin:0 auto;}
+  }
+
+  section.block{padding:88px 0;}
+  @media(max-width:860px){section.block{padding:56px 0;}}
+
+  /* ===== sobre ===== */
+  .about{background:var(--cream-2);}
+  .about-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:52px;align-items:center;max-width:980px;margin:0 auto;text-align:left;}
+  .about-photo .frame{border-radius:12px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);aspect-ratio:4/5;}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 10%;}
+  .about-bio p{color:var(--charcoal-soft);font-size:14.5px;font-weight:300;margin-bottom:14px;max-width:520px;}
+  .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;max-width:460px;}
+  .about-stat{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:16px 12px;text-align:center;}
+  .about-stat .n{font-family:'Playfair Display',serif;font-weight:600;font-size:19px;color:var(--gold-deep);display:block;}
+  .about-stat .l{font-size:10px;color:var(--charcoal-soft);text-transform:uppercase;letter-spacing:.05em;margin-top:4px;display:block;}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;}.about-photo{max-width:260px;margin:0 auto;}}
+
+  /* ===== panorama do método ===== */
+  .panorama{max-width:980px;margin:0 auto 64px;}
+  .panorama-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;position:relative;}
+  .panorama-steps::before{content:'';position:absolute;top:26px;left:12%;right:12%;height:1px;background:var(--line);z-index:0;}
+  .panorama-step{text-align:center;position:relative;z-index:1;padding:0 8px;}
+  .panorama-step .num{width:52px;height:52px;border-radius:50%;background:var(--plum);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-style:italic;font-size:19px;margin:0 auto 16px;box-shadow:var(--shadow);}
+  .panorama-step h3{font-size:15.5px;margin-bottom:6px;}
+  .panorama-step p{font-size:12.5px;color:var(--charcoal-soft);font-weight:300;line-height:1.55;}
+  @media(max-width:700px){
+    .panorama-steps{grid-template-columns:1fr;gap:26px;text-align:left;}
+    .panorama-steps::before{display:none;}
+    .panorama-step{display:grid;grid-template-columns:52px 1fr;gap:16px;text-align:left;align-items:start;}
+    .panorama-step .num{margin:0;}
+  }
+
+  /* ===== como funciona ===== */
+  .how-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:52px;align-items:center;max-width:980px;margin:0 auto;text-align:left;}
+  .how-text h3{font-size:19px;margin-bottom:12px;}
+  .how-text p{color:var(--charcoal-soft);font-size:14.5px;font-weight:300;margin-bottom:14px;max-width:480px;}
+  .how-list{display:flex;flex-direction:column;gap:14px;}
+  .how-item{display:flex;align-items:center;gap:14px;background:var(--white);border:1px solid var(--line);border-radius:10px;padding:16px 18px;}
+  .how-item .icon{color:var(--gold-deep);flex-shrink:0;width:20px;height:20px;}
+  .how-item span{font-size:13.5px;color:var(--charcoal);font-weight:500;}
+  @media(max-width:860px){.how-grid{grid-template-columns:1fr;}}
+
+  /* ===== pilares ===== */
+  .pillars-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin:44px auto 0;}
+  .pillar-card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:28px 26px;text-align:left;transition:transform .3s ease,border-color .3s ease;}
+  .pillar-card:hover{transform:translateY(-3px);border-color:var(--gold);}
+  .pillar-card .icon-wrap{width:44px;height:44px;border-radius:50%;background:var(--cream-2);display:flex;align-items:center;justify-content:center;color:var(--gold-deep);margin-bottom:14px;}
+  .pillar-card h3{font-size:16.5px;margin-bottom:8px;}
+  .pillar-card p{font-size:13.5px;color:var(--charcoal-soft);font-weight:300;line-height:1.65;}
+  @media(max-width:700px){.pillars-grid{grid-template-columns:1fr;}}
+
+  .chip-row{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;max-width:820px;margin:36px auto 0;}
+  .chip{font-size:12px;color:var(--charcoal-soft);border:1px solid var(--line);border-radius:100px;padding:8px 16px;background:var(--white);}
+
+  /* ===== certificações — carrossel com barra de rolagem ===== */
+  .certs{background:var(--plum);color:var(--cream);}
+  .certs .eyebrow{color:var(--gold-light);}
+  .certs .sec-head h2{color:var(--white);}
+  .certs .sec-head p.sub{color:rgba(246,239,226,.75);}
+  .cert-scroll{display:flex;gap:16px;overflow-x:auto;padding:8px 4px 22px;margin-top:44px;scroll-snap-type:x proximity;}
+  .cert-scroll::-webkit-scrollbar{height:8px;}
+  .cert-scroll::-webkit-scrollbar-track{background:rgba(246,239,226,.12);border-radius:10px;}
+  .cert-scroll::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px;}
+  .cert-scroll{scrollbar-width:thin;scrollbar-color:var(--gold) rgba(246,239,226,.12);}
+  .cert-card{flex:0 0 220px;scroll-snap-align:start;background:rgba(246,239,226,.06);border:1px solid rgba(246,239,226,.16);border-radius:12px;padding:22px 20px;}
+  .cert-card .ribbon{width:34px;height:34px;color:var(--gold-light);margin-bottom:14px;}
+  .cert-card h3{font-size:14px;color:var(--white);margin-bottom:8px;line-height:1.35;}
+  .cert-card .inst{font-size:11.5px;color:rgba(246,239,226,.65);margin-bottom:10px;}
+  .cert-card .hours{display:inline-block;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold-light);border:1px solid rgba(217,189,140,.4);border-radius:100px;padding:4px 10px;}
+  .cert-hint{text-align:center;font-size:12px;color:rgba(246,239,226,.55);margin-top:6px;}
+  .cert-hint .icon{display:inline;width:14px;height:14px;vertical-align:-2px;}
+
+  /* ===== unidades ===== */
+  .units-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px;margin:44px auto 0;}
+  .unit-card{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-align:left;box-shadow:var(--shadow);}
+  .unit-photo{aspect-ratio:4/3;overflow:hidden;background:linear-gradient(150deg,var(--gold-light),var(--gold));}
+  .unit-photo img{width:100%;height:100%;object-fit:cover;}
+  .unit-body{padding:22px 24px 26px;}
+  .unit-body h3{font-size:17px;margin-bottom:8px;}
+  .unit-body .addr{font-size:13px;color:var(--charcoal-soft);font-weight:300;margin-bottom:12px;line-height:1.55;}
+  .unit-adv{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--gold-deep);background:var(--cream-2);border-radius:100px;padding:6px 13px;font-weight:600;}
+  .unit-adv .icon{width:14px;height:14px;}
+  .units-extra{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:24px auto 0;}
+  .units-extra .att-card p{font-size:12.5px;}
+  @media(max-width:860px){.units-grid{grid-template-columns:1fr;}.units-extra{grid-template-columns:1fr;}}
+
+  /* ===== atendimento ===== */
+  .att-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:44px auto 0;}
+  .att-card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:26px 22px;text-align:left;}
+  .att-card .icon-wrap{width:40px;height:40px;border-radius:50%;background:var(--cream-2);display:flex;align-items:center;justify-content:center;color:var(--gold-deep);margin-bottom:14px;}
+  .att-card h3{font-size:15px;margin-bottom:8px;}
+  .att-card p{font-size:13px;color:var(--charcoal-soft);font-weight:300;line-height:1.6;}
+  @media(max-width:860px){.att-grid{grid-template-columns:1fr;}}
+
+  /* ===== caminhos de atendimento (CTA) ===== */
+  .paths-grid{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:20px;max-width:980px;margin:44px auto 0;align-items:stretch;}
+  .path-card{border-radius:16px;padding:32px 26px;text-align:left;display:flex;flex-direction:column;}
+  .path-card.simple{background:var(--white);border:1px solid var(--line);}
+  .path-card.simple h3{font-size:16px;margin-bottom:8px;}
+  .path-card.simple p{font-size:13px;color:var(--charcoal-soft);font-weight:300;margin-bottom:20px;flex:1;}
+  .path-card.featured{background:linear-gradient(150deg,var(--plum),var(--plum-soft));color:var(--white);box-shadow:var(--shadow);position:relative;overflow:hidden;transform:scale(1.04);}
+  .path-card.featured::after{content:'';position:absolute;right:-50px;top:-50px;width:160px;height:160px;border-radius:50%;background:rgba(217,189,140,.1);}
+  .path-badge{display:inline-block;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--plum);background:var(--gold-light);border-radius:100px;padding:5px 12px;margin-bottom:14px;position:relative;z-index:1;align-self:flex-start;}
+  .path-card.featured h3{color:var(--white);font-size:18px;margin-bottom:8px;position:relative;z-index:1;}
+  .path-card.featured p{color:rgba(246,239,226,.85);font-size:13.5px;font-weight:300;margin-bottom:22px;flex:1;position:relative;z-index:1;}
+  .path-card .icon-wrap{width:38px;height:38px;border-radius:50%;background:var(--cream-2);display:flex;align-items:center;justify-content:center;color:var(--gold-deep);margin-bottom:14px;}
+  .path-card.featured .icon-wrap{background:rgba(246,239,226,.15);color:var(--gold-light);}
+  .path-card .btn{width:100%;justify-content:center;font-size:13px;padding:13px 20px;position:relative;z-index:1;}
+  @media(max-width:860px){.paths-grid{grid-template-columns:1fr;}.path-card.featured{transform:none;order:-1;}}
+
+  /* ===== CTA final ===== */
+  .final-cta{background:linear-gradient(135deg,var(--plum),var(--plum-soft));color:var(--white);padding:90px 0;text-align:center;}
+  .final-cta .inner{max-width:600px;margin:0 auto;}
+  .final-cta .eyebrow{color:var(--gold-light);}
+  .final-cta h2{color:var(--white);font-size:clamp(26px,3.6vw,38px);margin-bottom:18px;}
+  .final-cta p{color:rgba(246,239,226,.85);font-size:15px;margin-bottom:30px;font-weight:300;}
+
+  /* ===== footer ===== */
+  footer{background:var(--cream-2);padding:50px 0 28px;}
+  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;padding-bottom:32px;border-bottom:1px solid var(--line);}
+  .footer-logo{font-family:'Playfair Display',serif;font-style:italic;font-size:21px;margin-bottom:10px;color:var(--plum);}
+  .footer-tag{font-size:13px;color:var(--charcoal-soft);max-width:300px;font-weight:300;}
+  .footer-col h4{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--gold-deep);margin-bottom:14px;font-weight:600;}
+  .footer-col a{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--charcoal-soft);margin-bottom:10px;font-weight:300;}
+  .footer-col a:hover{color:var(--plum);}
+  .footer-col a .icon{width:15px;height:15px;color:var(--gold-deep);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:20px;flex-wrap:wrap;gap:14px;}
+  .footer-bottom small{font-size:12px;color:var(--charcoal-soft);}
+  .ig-link{width:38px;height:38px;border-radius:50%;border:1px solid var(--gold);background:var(--white);display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s,transform .2s,background .2s;color:var(--gold-deep);flex-shrink:0;}
+  .ig-link:hover{border-color:var(--gold-deep);background:var(--plum);color:var(--gold-light);transform:translateY(-2px);}
+  .ig-link .icon{width:17px;height:17px;}
+  @media(max-width:600px){.footer-grid{flex-direction:column;}.footer-bottom{flex-direction:column;align-items:flex-start;}}
+
+  .float-wa{position:fixed;bottom:22px;right:22px;width:54px;height:54px;border-radius:50%;background:var(--plum);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);z-index:60;transition:transform .25s ease;}
+  .float-wa:hover{transform:scale(1.08);}
+  .float-wa .icon{color:var(--gold-light);width:24px;height:24px;fill:currentColor;stroke:none;}
+  @media(max-width:600px){.float-wa{width:48px;height:48px;bottom:16px;right:16px;}.float-wa .icon{width:21px;height:21px;}}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media(max-width:480px){
+    .wrap{padding:0 20px;}
+    section.block{padding:44px 0;}
+    .btn{padding:14px 26px;font-size:13.5px;}
+    .sec-head h2{font-size:23px;}
+    .hero h1{font-size:25px;}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    .btn{animation:none;}
+  }
+</style>
+<style>.vue-notification-group{display:block;position:fixed;z-index:5000}.vue-notification-wrapper{display:block;overflow:hidden;width:100%;margin:0;padding:0}.notification-title{font-weight:600}.vue-notification-template{display:block;box-sizing:border-box;background:#fff;text-align:left}.vue-notification{display:block;box-sizing:border-box;text-align:left;font-size:12px;padding:10px;margin:0 5px 5px;color:#fff;background:#44a4fc;border-left:5px solid #187FE7}.vue-notification.warn{background:#ffb648;border-left-color:#f48a06}.vue-notification.error{background:#e54d42;border-left-color:#b82e24}.vue-notification.success{background:#68cd86;border-left-color:#42a85f}.vn-fade-enter-active,.vn-fade-leave-active,.vn-fade-move{transition:all .5s}.vn-fade-enter-from,.vn-fade-leave-to{opacity:0}</style><style>.vue-notification-group{display:block;position:fixed;z-index:5000}.vue-notification-wrapper{display:block;overflow:hidden;width:100%;margin:0;padding:0}.notification-title{font-weight:600}.vue-notification-template{display:block;box-sizing:border-box;background:#fff;text-align:left}.vue-notification{display:block;box-sizing:border-box;text-align:left;font-size:12px;padding:10px;margin:0 5px 5px;color:#fff;background:#44a4fc;border-left:5px solid #187FE7}.vue-notification.warn{background:#ffb648;border-left-color:#f48a06}.vue-notification.error{background:#e54d42;border-left-color:#b82e24}.vue-notification.success{background:#68cd86;border-left-color:#42a85f}.vn-fade-enter-active,.vn-fade-leave-active,.vn-fade-move{transition:all .5s}.vn-fade-enter-from,.vn-fade-leave-to{opacity:0}</style><style>.vue-notification-group{display:block;position:fixed;z-index:5000}.vue-notification-wrapper{display:block;overflow:hidden;width:100%;margin:0;padding:0}.notification-title{font-weight:600}.vue-notification-template{display:block;box-sizing:border-box;background:#fff;text-align:left}.vue-notification{display:block;box-sizing:border-box;text-align:left;font-size:12px;padding:10px;margin:0 5px 5px;color:#fff;background:#44a4fc;border-left:5px solid #187FE7}.vue-notification.warn{background:#ffb648;border-left-color:#f48a06}.vue-notification.error{background:#e54d42;border-left-color:#b82e24}.vue-notification.success{background:#68cd86;border-left-color:#42a85f}.vn-fade-enter-active,.vn-fade-leave-active,.vn-fade-move{transition:all .5s}.vn-fade-enter-from,.vn-fade-leave-to{opacity:0}</style><link type="text/css" rel="stylesheet" href="./index.html_files/css2(1)"><link type="text/css" rel="stylesheet" href="./index.html_files/css2(1)"><span id="cpn-store-bar-init" style="display: none;"></span><style>.vue-notification-group{display:block;position:fixed;z-index:5000}.vue-notification-wrapper{display:block;overflow:hidden;width:100%;margin:0;padding:0}.notification-title{font-weight:600}.vue-notification-template{display:block;box-sizing:border-box;background:#fff;text-align:left}.vue-notification{display:block;box-sizing:border-box;text-align:left;font-size:12px;padding:10px;margin:0 5px 5px;color:#fff;background:#44a4fc;border-left:5px solid #187FE7}.vue-notification.warn{background:#ffb648;border-left-color:#f48a06}.vue-notification.error{background:#e54d42;border-left-color:#b82e24}.vue-notification.success{background:#68cd86;border-left-color:#42a85f}.vn-fade-enter-active,.vn-fade-leave-active,.vn-fade-move{transition:all .5s}.vn-fade-enter-from,.vn-fade-leave-to{opacity:0}</style><script src="chrome-extension://gidejehfgombmkfflghejpncblgfkagj/google.js"></script></head>
+<body>
+
+<header>
+  <div class="nav">
+    <nav class="nav-links">
+      <a href="https://melhorqueontem.vercel.app/#sobre">Sobre</a>
+      <a href="https://melhorqueontem.vercel.app/#como-funciona">Como funciona</a>
+    </nav>
+    <div class="logo">
+      <span class="name">Sou Melhor Que Ontem</span>
+      <span class="sub">Spa Urbano · Débora Pereira</span>
+    </div>
+    <nav class="nav-links">
+      <a href="https://melhorqueontem.vercel.app/#oferecemos">O que oferecemos</a>
+      <a href="https://melhorqueontem.vercel.app/#atendimento">Unidades</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="https://melhorqueontem.vercel.app/#sobre">Sobre</a>
+  <a href="https://melhorqueontem.vercel.app/#como-funciona">Como funciona</a>
+  <a href="https://melhorqueontem.vercel.app/#oferecemos">O que oferecemos</a>
+  <a href="https://melhorqueontem.vercel.app/#certificacoes">Certificações</a>
+  <a href="https://melhorqueontem.vercel.app/#atendimento">Unidades</a>
+  <a href="https://wa.me/5521971409640" style="font-family:&#39;Montserrat&#39;,sans-serif;font-style:normal;font-size:14px;color:var(--gold-deep);letter-spacing:.06em;text-transform:uppercase;">Agendar sessão</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero-grid">
+  <div class="hero-copy reveal in">
+    <span class="eyebrow">Débora Pereira · Terapeuta Integrativa</span>
+    <h1>Seja bem-vinda ao <em>Sou Melhor Que Ontem</em>.</h1>
+    <p class="lead">Aqui, o <strong>cuidado é completo</strong>: corpo, mente e energia em harmonia. Um espaço criado com carinho pra você que sente que <strong>merece mais</strong> — mais leveza, mais presença, mais você.</p>
+    <a href="https://wa.me/5521971409640" class="btn">Agendar minha sessão</a>
+  </div>
+  <div class="hero-photo reveal in">
+    <div class="frame">
+      <img src="./index.html_files/XGOSCZ9.jpeg" alt="Débora Pereira">
+    </div>
+    <div class="hero-badge">
+      <span class="n">28+</span>
+      <span class="l">Formações em terapias integrativas</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section class="block about" id="sobre">
+  <div class="wrap">
+    <div class="about-grid reveal in">
+      <div class="about-photo">
+        <div class="frame">
+          <img src="./index.html_files/0D3nnxs.jpeg" alt="Débora Pereira">
+        </div>
+      </div>
+      <div class="about-bio">
+        <span class="eyebrow">Quem cuida de você</span>
+        <h2>Débora Pereira</h2>
+        <p>Em 2020, passei pelo <strong>maior desafio da minha vida</strong>: fiquei <strong>14 dias em coma</strong> por causa da Covid. A alta foi só o começo de uma nova jornada — cirurgia no quadril, cadeira de rodas, e o aprendizado de conviver com limitações que eu nunca imaginei ter.</p>
+        <p>Foi um processo de luto pela pessoa que eu era. Reconstruí minha autoestima, minha rotina e minha saúde emocional — e entendi, na prática, que <strong>ninguém é só mente e ninguém é só corpo</strong>: quando a mente sofre, o corpo sente; quando o corpo recebe cuidado, a mente também descansa.</p>
+        <p>O Sou Melhor Que Ontem nasceu ainda antes disso, do meu interesse de mais de dez anos por comportamento humano — mas foi essa vivência que uniu de vez as duas áreas. Hoje, antes de qualquer técnica, eu faço uma <strong>escuta detalhada</strong> de cada pessoa. <strong>Não existe protocolo pronto — existe cuidado individualizado.</strong></p>
+        <div class="about-stats">
+          <div class="about-stat"><span class="n">28+</span><span class="l">Certificações</span></div>
+          <div class="about-stat"><span class="n">2</span><span class="l">Unidades RJ</span></div>
+          <div class="about-stat"><span class="n">100%</span><span class="l">Presencial e online</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ O MÉTODO — PANORAMA ============ -->
+<section class="block how" id="como-funciona">
+  <div class="wrap sec-head reveal in">
+    <span class="eyebrow">O Método</span>
+    <h2>O que é o <em>Sou Melhor Que Ontem</em></h2>
+    <p class="sub">Não é só uma massagem, nem só uma sessão de terapia. É uma <strong>jornada de cuidado integrado</strong>, pensada pra unir corpo e mente num só lugar — até você sair diferente de como entrou.</p>
+  </div>
+  <div class="wrap">
+    <div class="panorama reveal in">
+      <div class="panorama-steps">
+        <div class="panorama-step">
+          <div class="num">1</div>
+          <h3>Escuta</h3>
+          <p>Uma conversa detalhada pra entender a origem, não só o sintoma.</p>
+        </div>
+        <div class="panorama-step">
+          <div class="num">2</div>
+          <h3>Corpo</h3>
+          <p>Técnicas corporais escolhidas e personalizadas pra aquele momento.</p>
+        </div>
+        <div class="panorama-step">
+          <div class="num">3</div>
+          <h3>Mente</h3>
+          <p>Espaço de elaboração emocional, com psicanálise ou coach sistêmico quando faz sentido.</p>
+        </div>
+        <div class="panorama-step">
+          <div class="num">4</div>
+          <h3>Renovação</h3>
+          <p>Você sai mais leve, mais presente — um pouquinho melhor que ontem.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap how-grid reveal in">
+    <div class="how-text">
+      <span class="eyebrow">Antes de qualquer técnica</span>
+      <h3>Uma escuta de verdade</h3>
+      <p>O atendimento começa muito antes da massagem — no chá, na escuta, no ambiente pensado pra você desligar do mundo lá fora. Antes de qualquer técnica, faço uma conversa detalhada pra entender quem é aquela pessoa, porque duas pessoas podem chegar com a <strong>mesma dor... por motivos completamente diferentes</strong>.</p>
+      <p>A partir disso, escolho os óleos essenciais, as técnicas e a intensidade pensando só em você. Não existe protocolo pronto — cada atendimento é <strong>montado na hora, pra aquele momento</strong>.</p>
+    </div>
+    <div class="how-list">
+      <div class="how-item"><svg class="icon" viewBox="0 0 24 24"><path d="M9 18h6"></path><path d="M10 21h4"></path><path d="M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.3 1 2.5h6c0-1.2.4-1.9 1-2.5A6 6 0 0 0 12 3z"></path></svg><span>Sono e nível de estresse</span></div>
+      <div class="how-item"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"></circle><path d="M8 12h8M12 8v8"></path></svg><span>Alimentação e rotina intestinal</span></div>
+      <div class="how-item"><svg class="icon" viewBox="0 0 24 24"><path d="M4 17l5-5 4 3 7-8"></path><path d="M15 7h5v5"></path></svg><span>Rotina, postura e trabalho</span></div>
+      <div class="how-item"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg><span>Histórico de saúde e dores</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ O QUE OFERECEMOS ============ -->
+<section class="block" id="oferecemos">
+  <div class="wrap sec-head reveal in">
+    <span class="eyebrow">O que você encontra aqui</span>
+    <h2>Cuidado completo, em <em>quatro frentes</em></h2>
+    <p class="sub">Cada pessoa chega de um jeito — por isso o atendimento une técnicas corporais, saúde mental, estética e presença, conforme o que você precisa.</p>
+  </div>
+  <div class="wrap">
+    <div class="pillars-grid reveal in">
+      <div class="pillar-card">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21c-4-2.5-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7.5-7 10z"></path><path d="M12 21V9"></path></svg></div>
+        <h3>Técnicas corporais de spa</h3>
+        <p><strong>Massagem relaxante e terapêutica</strong> com óleos essenciais, cromoterapia e técnicas da medicina tradicional chinesa e ayurveda, spa dos pés completo com reflexologia, e massagem craniofacial.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M9.5 9.5a2.5 2.5 0 1 1 3.2 2.4c-.7.3-1.2.8-1.2 1.6v.3"></path><circle cx="12" cy="16.5" r=".4" fill="currentColor" stroke="none"></circle><circle cx="12" cy="12" r="8.5"></circle></svg></div>
+        <h3>Saúde mental</h3>
+        <p>Psicanálise e coach sistêmico — um <strong>espaço seguro</strong> pra se conhecer, superar bloqueios e viver com mais leveza e clareza.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3c-3 3-5 5.5-5 9a5 5 0 0 0 10 0c0-3.5-2-6-5-9z"></path><path d="M9.5 15.5c0 1.4 1.1 2.5 2.5 2.5"></path></svg></div>
+        <h3>Estética corporal</h3>
+        <p><strong>Drenagem linfática corporal e facial</strong>, pra reduzir inchaço, estimular a circulação e devolver leveza ao corpo.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-9.5C5 7 7 5 9.5 5c1.2 0 2 .6 2.5 1.3C12.5 5.6 13.3 5 14.5 5 17 5 19 7 19 10.5 19 15.5 12 20 12 20z"></path></svg></div>
+        <h3>Dia da Noiva</h3>
+        <p><strong>Um dia inteiro de spa</strong> pensado pra noiva — vários serviços relaxantes e revigorantes pra pele, escolhidos especialmente pra esse momento único.</p>
+      </div>
+    </div>
+    <div class="chip-row reveal in">
+      <span class="chip">Mindfulness e presença</span>
+      <span class="chip">Massagem ayurvédica</span>
+      <span class="chip">Liberação miofascial</span>
+      <span class="chip">Limpeza de pele ayurvédica</span>
+      <span class="chip">Ventosaterapia</span>
+      <span class="chip">Pedras quentes</span>
+      <span class="chip">Reiki</span>
+      <span class="chip">Barras de Access</span>
+      <span class="chip">Análise comportamental</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICAÇÕES — carrossel ============ -->
+<section class="block certs" id="certificacoes">
+  <div class="wrap sec-head reveal in">
+    <span class="eyebrow">Formação e credenciais</span>
+    <h2>Uma jornada de estudo <em>contínua</em></h2>
+    <p class="sub">Cada atendimento é sustentado por formações reconhecidas em diferentes abordagens terapêuticas.</p>
+  </div>
+  <div class="wrap">
+    <div class="cert-scroll reveal in">
+      <!-- ===== Técnicas corporais de spa ===== -->
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Massoterapeuta</h3>
+        <div class="inst">Credenciado IBRATH</div>
+        <span class="hours">Credenciado</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Ayurveda + Terapias Naturais</h3>
+        <div class="inst">Instituto Fontana</div>
+        <span class="hours">500h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Liberação Miofascial &amp; Ventosaterapia</h3>
+        <div class="inst">Curso Fascial 360</div>
+        <span class="hours">10h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Acupuntura Etérica Quântica — Mestrado</h3>
+        <div class="inst">Capryci Terapias · ABRATH</div>
+        <span class="hours">30h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Cromoterapia</h3>
+        <div class="inst">IBRATH</div>
+        <span class="hours">180h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Fitoterapia</h3>
+        <div class="inst">IBRATH</div>
+        <span class="hours">180h</span>
+      </div>
+
+      <!-- ===== Saúde mental ===== -->
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Psicanalista</h3>
+        <div class="inst">Credenciado IBRATH</div>
+        <span class="hours">Credenciado</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Terapeuta Analista</h3>
+        <div class="inst">IBRATH</div>
+        <span class="hours">180h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Pós-Graduação em Coach Empresarial</h3>
+        <div class="inst">Unisignorelli</div>
+        <span class="hours">450h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Coach Sistêmico</h3>
+        <div class="inst">Credenciado IBRATH</div>
+        <span class="hours">Credenciado</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Pós-Graduação em Docência do Ensino Superior</h3>
+        <div class="inst">Unisignorelli</div>
+        <span class="hours">850h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Pós-Graduação em Neuropsicopedagogia</h3>
+        <div class="inst">Unisignorelli</div>
+        <span class="hours">450h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Hipnose Objetiva</h3>
+        <div class="inst">Núcleo de Terapias Reencontro</div>
+        <span class="hours">16h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Programação Neurolinguística</h3>
+        <div class="inst">IBRATH</div>
+        <span class="hours">180h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Linguagem Terapêutica</h3>
+        <div class="inst">IBRATH</div>
+        <span class="hours">120h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Ressignificação do Conceito da Dor</h3>
+        <div class="inst">Centro Universitário Signorelli</div>
+        <span class="hours">12h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Missão Terapêutica</h3>
+        <div class="inst">IBRATH</div>
+        <span class="hours">120h</span>
+      </div>
+
+      <!-- ===== Mindfulness, energia e holístico ===== -->
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Meditação</h3>
+        <div class="inst">IBRATH</div>
+        <span class="hours">180h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Mindfulness</h3>
+        <div class="inst">IBRATH</div>
+        <span class="hours">120h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Access Bars®</h3>
+        <div class="inst">Access Consciousness</div>
+        <span class="hours">2017</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Access Facelift® Practitioner</h3>
+        <div class="inst">Access Consciousness</div>
+        <span class="hours">2017</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Reiki Tradicional Japonês — Nível I e II</h3>
+        <div class="inst">EHI — Espaço Holístico Isha</div>
+        <span class="hours">30h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Ho'oponopono</h3>
+        <div class="inst">IBRATH</div>
+        <span class="hours">180h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Física Quântica</h3>
+        <div class="inst">IBRATH</div>
+        <span class="hours">180h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Sagrado Feminino e Masculino</h3>
+        <div class="inst">IBRATH</div>
+        <span class="hours">120h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Energia Sexual Feminina</h3>
+        <div class="inst">IBRATH</div>
+        <span class="hours">180h</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Procedimentos Terapêuticos</h3>
+        <div class="inst">IBRATH</div>
+        <span class="hours">120h</span>
+      </div>
+
+      <!-- ===== Reconhecimento ===== -->
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Certificação Internacional em Terapias Holísticas</h3>
+        <div class="inst">Holistic Therapists Council</div>
+        <span class="hours">70+ técnicas</span>
+      </div>
+      <div class="cert-card">
+        <svg class="ribbon icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M8.5 12.5 7 21l5-2.5L17 21l-1.5-8.5"></path></svg>
+        <h3>Terapeuta Black</h3>
+        <div class="inst">Credenciado IBRATH</div>
+        <span class="hours">2023</span>
+      </div>
+    </div>
+    <p class="cert-hint reveal in"><svg class="icon" viewBox="0 0 24 24" style="stroke:currentColor;"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"></path></svg> arraste pra ver todas as formações</p>
+  </div>
+</section>
+
+<!-- ============ UNIDADES ============ -->
+<section class="block" id="atendimento">
+  <div class="wrap sec-head reveal in">
+    <span class="eyebrow">Onde te receber</span>
+    <h2>Nossas <em>unidades</em></h2>
+    <p class="sub">Atendimento presencial e online. Cada unidade tem um clima diferente — escolha o que combina com o seu momento.</p>
+  </div>
+  <div class="wrap">
+    <div class="units-grid reveal in">
+      <div class="unit-card">
+        <div class="unit-photo">
+          <img src="./index.html_files/lbeJ53y.jpeg" alt="Unidade Barra da Tijuca">
+        </div>
+        <div class="unit-body">
+          <h3>Barra da Tijuca</h3>
+          <p class="addr">Rua Mário Covas Júnior, 335 — Canal de Marapendi, próximo ao Downtown</p>
+          <span class="unit-adv"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="10" rx="2"></rect><path d="M6 9V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"></path><circle cx="7.5" cy="19" r="1.2" fill="currentColor" stroke="none"></circle><circle cx="16.5" cy="19" r="1.2" fill="currentColor" stroke="none"></circle></svg> Estacionamento no prédio</span>
+        </div>
+      </div>
+      <div class="unit-card">
+        <div class="unit-photo">
+          <img src="./index.html_files/QyHviC2.jpeg" alt="Unidade Freguesia">
+        </div>
+        <div class="unit-body">
+          <h3>Freguesia</h3>
+          <p class="addr">Rua Araguaia, 3 — dentro da Instituição de Ensino Unisignorelli</p>
+          <span class="unit-adv"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3c-3 3-5 5.5-5 9a5 5 0 0 0 10 0c0-3.5-2-6-5-9z"></path></svg> Sala privativa, em ambiente externo arborizado</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="units-extra reveal in">
+      <div class="att-card">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="12" rx="2"></rect><path d="M2 20h20"></path></svg></div>
+        <h3>Online</h3>
+        <p>Sessões com a mesma qualidade, acolhimento e profundidade do presencial.</p>
+      </div>
+      <div class="att-card">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></div>
+        <h3>À domicílio</h3>
+        <p>Somente massagens, drenagens e tratamentos estéticos (limpeza de pele, peeling). Atendo Recreio, Barra e Jacarepaguá — <strong>não atendo Zona Sul</strong>.</p>
+      </div>
+      <div class="att-card">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2"></rect><path d="M4 9.5h16"></path></svg></div>
+        <h3>Formas de pagamento</h3>
+        <p>Pix, cartão, e parcelamento — <strong>consulte valores e pacotes especiais no WhatsApp</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESCOLHA SEU CAMINHO ============ -->
+<section class="final-cta reveal in">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:0;">
+      <span class="eyebrow">Se permita</span>
+      <h2 style="color:var(--white);">Você merece se sentir <em style="color:var(--gold-light);">melhor que ontem</em> — todos os dias.</h2>
+      <p class="sub" style="color:rgba(246,239,226,.85);">Cuide-se. Escolha por onde você quer começar.</p>
+    </div>
+    <div class="paths-grid">
+      <div class="path-card simple">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M9.5 9.5a2.5 2.5 0 1 1 3.2 2.4c-.7.3-1.2.8-1.2 1.6v.3"></path><circle cx="12" cy="16.5" r=".4" fill="currentColor" stroke="none"></circle><circle cx="12" cy="12" r="8.5"></circle></svg></div>
+        <h3>Atendimento em Psicanálise</h3>
+        <p>Sessões de psicanálise e coach sistêmico, presencial ou online.</p>
+        <a href="https://wa.me/5521971409640?text=Oi%20D%C3%A9bora!%20Quero%20agendar%20uma%20sess%C3%A3o%20de%20psican%C3%A1lise." class="btn btn-on-dark">Agendar psicanálise</a>
+      </div>
+      <div class="path-card featured">
+        <span class="path-badge">Mais completo</span>
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21c-4-2.5-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7.5-7 10z"></path><path d="M12 21V9"></path></svg></div>
+        <h3>Atendimento Completo e Integrado</h3>
+        <p>Corpo, estética e saúde mental juntos, na jornada do Método Sou Melhor Que Ontem — <strong>o caminho mais completo</strong> pra sair diferente de como entrou.</p>
+        <a href="https://wa.me/5521971409640?text=Oi%20D%C3%A9bora!%20Quero%20saber%20mais%20sobre%20o%20atendimento%20completo%20e%20integrado." class="btn">Quero o atendimento completo</a>
+      </div>
+      <div class="path-card simple">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21c-4-2.5-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7.5-7 10z"></path><path d="M12 21V9"></path></svg></div>
+        <h3>Atendimento em Técnicas Corporais</h3>
+        <p>Massagens, spa dos pés e estética corporal.</p>
+        <a href="https://wa.me/5521971409640?text=Oi%20D%C3%A9bora!%20Quero%20agendar%20um%20atendimento%20corporal." class="btn btn-on-dark">Agendar spa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Sou Melhor Que Ontem</div>
+        <p class="footer-tag">Spa Urbano — corpo, estética e saúde mental em harmonia, com Débora Pereira.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <a href="https://melhorqueontem.vercel.app/#sobre">Sobre</a>
+        <a href="https://melhorqueontem.vercel.app/#como-funciona">Como funciona</a>
+        <a href="https://melhorqueontem.vercel.app/#oferecemos">O que oferecemos</a>
+        <a href="https://melhorqueontem.vercel.app/#certificacoes">Certificações</a>
+        <a href="https://melhorqueontem.vercel.app/#atendimento">Unidades</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5521971409640"><svg class="icon" viewBox="0 0 24 24"><path d="M17.3 14.2c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.3.4-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.6.2-.2.2-.4.3-.6.1-.2.1-.4 0-.6-.1-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.7 5.9 5.1.8.4 1.5.6 2 .7.8.3 1.6.2 2.2-.1.7-.4 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.7-.4z" fill="currentColor" stroke="none"></path></svg>(21) 97140-9640</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© 2026 Sou Melhor Que Ontem — Débora Pereira. Todos os direitos reservados.</small>
+      <a href="https://instagram.com/sou.melhorqueontem" class="ig-link" aria-label="Instagram">
+        <svg class="icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="16.3" cy="7.7" r=".6" fill="currentColor" stroke="none"></circle></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5521971409640" class="float-wa" aria-label="WhatsApp">
+  <svg class="icon" viewBox="0 0 24 24"><path d="M17.3 14.2c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.3.4-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.6.2-.2.2-.4.3-.6.1-.2.1-.4 0-.6-.1-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.7 5.9 5.1.8.4 1.5.6 2 .7.8.3 1.6.2 2.2-.1.7-.4 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.7-.4z"></path></svg>
+</a>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const burger = document.getElementById('burger');
+  const panel = document.getElementById('mobilePanel');
+  burger.addEventListener('click', ()=>{
+    burger.classList.toggle('open');
+    panel.classList.toggle('open');
+  });
+  panel.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+    burger.classList.remove('open');
+    panel.classList.remove('open');
+  }));
+</script>
+
+
+
+<div id="xl1lrkxvch" style="display: block;"><template shadowrootmode="closed"><div id="afbcbhwuso"><style type="text/css">
+  @import 'chrome-extension://gidejehfgombmkfflghejpncblgfkagj/app.css';
+</style>
+<div id="cuponomia" data-v-app=""><div></div></div>
+</div></template></div></body></html>
